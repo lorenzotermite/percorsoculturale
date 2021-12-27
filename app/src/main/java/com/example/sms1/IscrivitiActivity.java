@@ -11,8 +11,10 @@ import android.widget.DatePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sms1.db.tables.Utente;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.sql.Date;
 import java.util.Calendar;
 
 public class IscrivitiActivity extends AppCompatActivity {

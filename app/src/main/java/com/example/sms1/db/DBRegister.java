@@ -1,4 +1,4 @@
-package com.example.sms1.DB;
+package com.example.sms1.db;
 
 import android.os.AsyncTask;
 
@@ -17,8 +17,6 @@ public class DBRegister extends AsyncTask<String, Integer, Long> {
 
     }
 
-    public static final MediaType JSON
-            = MediaType.get("text/x-markdown; charset=utf-8");
 
     @Override
     protected Long doInBackground(String... params) {
@@ -31,13 +29,7 @@ public class DBRegister extends AsyncTask<String, Integer, Long> {
                 .add("email", params[3])
                 .add("password", Integer.toString(params[4].hashCode()))
                 .build();
-        String urlParameters =  "nome=" + params[0] +
-                "&cognome=" + params[1] +
-                "&data_di_nascita=" + params[2] +
-                "&email=" + params[3] +
-                "&password=" + params[4].hashCode();
-        String url = "http://192.168.1.13/db_utente_addRow.php?"+urlParameters;
-        RequestBody body = RequestBody.create(urlParameters, JSON);
+        String url = "http://192.168.1.13/db_utente_addRow.php?";
         Request request = new Request.Builder()
                 .url(url)
                 .post(formBody)

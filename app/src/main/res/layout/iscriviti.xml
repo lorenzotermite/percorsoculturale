@@ -214,20 +214,20 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/iscrivitiBtn"
                 style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center"
 
+                android:layout_gravity="center"
                 android:layout_marginTop="36dp"
                 android:text="Iscriviti"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:backgroundTint="@color/color_primary"
-                app:elevation="5dp"
 
 
-                />
+                app:elevation="5dp" />
 
 
 
