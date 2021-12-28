@@ -8,11 +8,11 @@ public class Utente {
     private int id;
     private String nome;
     private String cognome;
-    private Calendar data_di_nascita;
+    private Date data_di_nascita;
     private String email;
     private String punti;
 
-    public Utente(int id, String nome, String cognome, Calendar data_di_nascita, String email, String punti) {
+    public Utente(int id, String nome, String cognome, Date data_di_nascita, String email, String punti) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -21,7 +21,7 @@ public class Utente {
         this.punti = punti;
     }
 
-    public Utente(String nome, String cognome, Calendar data_di_nascita, String email, String punti) {
+    public Utente(String nome, String cognome, Date data_di_nascita, String email, String punti) {
         this.id = 0;
         this.nome = nome;
         this.cognome = cognome;
@@ -42,7 +42,7 @@ public class Utente {
         return cognome;
     }
 
-    public Calendar getData_di_nascita() {
+    public Date getData_di_nascita() {
         return data_di_nascita;
     }
 

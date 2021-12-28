@@ -4,6 +4,7 @@ import com.example.sms1.db.DBManager;
 import com.example.sms1.db.tables.Utente;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -23,7 +24,7 @@ public class UtenteDAO extends DBManager {
         RequestBody formBody = new FormBody.Builder()
                 .add("nome", utente.getNome())
                 .add("cognome", utente.getCognome())
-                .add("data_di_nascita", utente.getData_di_nascita().getTime().toString())
+                .add("data_di_nascita", new SimpleDateFormat("yyyy-mm-dd").format(utente.getData_di_nascita()))
                 .add("email", utente.getEmail())
                 .add("password", password)
                 .build();
