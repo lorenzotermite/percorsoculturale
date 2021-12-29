@@ -19,8 +19,9 @@ public class UtenteDAO extends DBManager {
     }
 
     //TODO testare metodo perché potrebbe essere necessario renderlo asincrono
+    //La password deve essere passata già hashata
     public void insert(Utente utente, String password){
-        OkHttpClient client = new OkHttpClient();
+
         RequestBody formBody = new FormBody.Builder()
                 .add("nome", utente.getNome())
                 .add("cognome", utente.getCognome())
@@ -28,18 +29,8 @@ public class UtenteDAO extends DBManager {
                 .add("email", utente.getEmail())
                 .add("password", password)
                 .build();
-        String url = this.URL+"db_utente_addRow.php";
-        Request request = new Request.Builder()
-                .url(url)
-                .post(formBody)
-                .build();
-        try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        this.send("db_utente_addRow.php", formBody);
 
-        }
     }
 
 
