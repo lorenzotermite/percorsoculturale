@@ -26,17 +26,6 @@ public class AttrazioneDAO extends DBManager {
                 .add("descrizione", attrazione.getDescrizione())
                 .add("immagine", attrazione.getImmagine())
                 .build();
-       // String url = this.URL+"db_utente_addRow.php"; //TODO modificare db_xxx
-        Request request = new Request.Builder()
-                .url(url)
-                .post(formBody)
-                .build();
-        try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-
-        }
+        this.send("db_attrazione_addRow.php", formBody);
     }
 }

@@ -9,6 +9,7 @@ public class Quiz {
     private String risposta_errata2;
     private String risposta_errata3;
     private int tempo;
+    private int idAttivita;
     private Attivita attivita;
 
 
@@ -23,15 +24,16 @@ public class Quiz {
         this.attivita = attivita;
     }
 
-    public Quiz(String domanda, String risposta_corretta, String risposta_errata1, String risposta_errata2, String risposta_errata3, int tempo, Attivita attivita) {
-        this.id = 0;
+    public Quiz(int id, String domanda, String risposta_corretta, String risposta_errata1, String risposta_errata2, String risposta_errata3, int tempo, int idAttivita) {
+        this.id = id;
         this.domanda = domanda;
         this.risposta_corretta = risposta_corretta;
         this.risposta_errata1 = risposta_errata1;
         this.risposta_errata2 = risposta_errata2;
         this.risposta_errata3 = risposta_errata3;
         this.tempo = tempo;
-        this.attivita = attivita;
+        this.idAttivita = idAttivita;
+        this.attivita = null;
     }
 
 
@@ -66,4 +68,6 @@ public class Quiz {
     public Attivita getAttivita() {
         return attivita;
     }
+
+    public void setAttivita(Attivita attivita) { this.attivita = attivita; }
 }

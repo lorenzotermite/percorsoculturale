@@ -13,7 +13,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class AttivitaDAO {
+public class AttivitaDAO extends DBManager{
 
     public AttivitaDAO(){
 
@@ -23,20 +23,11 @@ public class AttivitaDAO {
     public void insert(Attivita attivita){
         OkHttpClient client = new OkHttpClient();
         RequestBody formBody = new FormBody.Builder()
-                .add("punteggio", attivita.getPunteggio())
+                .add("punteggio", Integer.toString(attivita.getPunteggio()))
                 .build();
-        // String url = this.URL+"db_utente_addRow.php"; //TODO modificare db_xxx
-        Request request = new Request.Builder()
-                .url(url)
-                .post(formBody)
-                .build();
-        try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-
-        }
+        this.send("db_attivita_addRow.php", formBody);
     }
-}
+
+
+
 }

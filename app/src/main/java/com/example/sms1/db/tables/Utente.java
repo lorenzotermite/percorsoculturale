@@ -21,15 +21,6 @@ public class Utente {
         this.punti = punti;
     }
 
-    public Utente(String nome, String cognome, Date data_di_nascita, String email, String punti) {
-        this.id = 0;
-        this.nome = nome;
-        this.cognome = cognome;
-        this.data_di_nascita = data_di_nascita;
-        this.email = email;
-        this.punti = punti;
-    }
-
     public int getId() {
         return id;
     }

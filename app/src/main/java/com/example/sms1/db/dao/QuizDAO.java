@@ -12,7 +12,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class QuizDAO {
+public class QuizDAO extends DBManager{
 
     public QuizDAO(){
 
@@ -27,19 +27,9 @@ public class QuizDAO {
                 .add("risposta_errata1", quiz.getRisposta_errata1())
                 .add("risposta_errata2", quiz.getRisposta_errata2())
                 .add("risposta_errata3", quiz.getRisposta_errata3())
-                .add("tempo", quiz.getTempo())
+                .add("tempo", Integer.toString(quiz.getTempo()))
                 .build();
-        // String url = this.URL+"db_utente_addRow.php"; //TODO modificare db_xxx
-        Request request = new Request.Builder()
-                .url(url)
-                .post(formBody)
-                .build();
-        try (Response response = client.newCall(request).execute()) {
-            System.out.println(response.body().string());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        this.send("db_quiz_addRow.php", formBody);
 
-        }
     }
 }

@@ -1,5 +1,7 @@
 package com.example.sms1.db.tables;
 
+import android.media.Image;
+
 import java.sql.Date;
 
 public class Attrazione {
@@ -7,10 +9,11 @@ public class Attrazione {
     private int id;
     private String nome;
     private String descrizione;
-    private String immagine;
+    private Image immagine;
+    private int idAttivita;
     private Attivita attivita;
 
-    public Attrazione(int id, String nome, String descrizione, String immagine, Attivita attivita) {
+    public Attrazione(int id, String nome, String descrizione, Image immagine, Attivita attivita) {
         this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
@@ -18,12 +21,13 @@ public class Attrazione {
         this.attivita = attivita;
     }
 
-    public Attrazione(String nome, String descrizione, String immagine, Attivita attivita) {
-        this.id = 0;
+    public Attrazione(int id, String nome, String descrizione, Image immagine, int idAttivita) {
+        this.id = id;
         this.nome = nome;
         this.descrizione = descrizione;
         this.immagine = immagine;
-        this.attivita = attivita;
+        this.idAttivita = idAttivita;
+        this.attivita = null;
     }
 
     public int getId() {
@@ -38,11 +42,13 @@ public class Attrazione {
         return descrizione;
     }
 
-    public String getImmagine() {
+    public Image getImmagine() {
         return immagine;
     }
 
     public Attivita getAttivita() {
         return attivita;
     }
+
+    public void setAttivita(Attivita attivita) { this.attivita = attivita; }
 }

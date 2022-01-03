@@ -5,8 +5,8 @@ import java.sql.Date;
 public class Utente_Percorso {
 
     private int idUtente;
-    private Utente utente;
     private int idPercorso;
+    private Utente utente;
     private Percorso percorso;
     private Date data;
     private int punteggio;
