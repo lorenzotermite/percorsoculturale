@@ -23,5 +23,7 @@
         android:icon="@drawable/hamburga"
         android:title="menu"
         android:contentDescription="menu"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:onClick="bottom_sheet"
+        />
 </menu>

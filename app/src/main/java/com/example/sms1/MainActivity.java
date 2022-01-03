@@ -25,11 +25,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.login);
 
        Button btn = (Button)findViewById(R.id.iscrivitiButton);
-
+       Button btnOspite  =(Button)findViewById(R.id.accediComeOspite);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, IscrivitiActivity.class));
+            }
+
+        });
+
+        btnOspite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }
 
         });
