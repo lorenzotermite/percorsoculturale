@@ -1,5 +1,7 @@
 package com.example.sms1.db.tables;
 
+import org.json.JSONObject;
+
 import java.sql.Date;
 import java.util.Calendar;
 
